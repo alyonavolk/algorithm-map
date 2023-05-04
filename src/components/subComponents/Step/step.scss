@@ -1,0 +1,22 @@
+@import '../../../style/variables.scss';
+
+.step {
+    width: 50px;
+    height: 50px;
+    @extend %num;
+
+    border: 4px dashed $text;
+    color: $dim-text;
+    background-color: $step;
+    opacity: 0.5;
+    border-radius: 100px;
+    transition: opacity 0.5s linear, color 0.5s linear;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover, &__active {
+        color: $dim-text;
+        opacity: 1;
+    }
+}

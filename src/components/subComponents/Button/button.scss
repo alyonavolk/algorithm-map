@@ -1,0 +1,15 @@
+@import '../../../style/variables.scss';
+
+.btn {
+    @extend %main-descr;
+    max-width: 150px;
+    padding: 5px 30px;
+    border: 2px dashed $text;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: inherit;
+    transition: background-color 0.3s linear;
+    &:hover{
+        background-color: $hover;
+    }
+}

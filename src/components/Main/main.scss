@@ -1,0 +1,130 @@
+@import '../../style/variables.scss';
+
+.main {
+    position: relative;
+    margin: 50px 3vw;
+    &__title {
+        @extend %title;
+        text-align: center;
+    }
+    &__progres {
+        position: absolute;
+        right: 5vw;
+        top: 0;
+        @extend %main-descr;
+        max-width: 100px;
+        p {
+            text-align: center;
+            color: $dim-text;
+        }
+    }
+    &__info {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap-reverse;
+        gap: 30px;
+        margin: 25px 0;
+        &_descr {
+            max-width: 700px;
+            @extend %descr;
+            text-align: center;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        &_input {
+            @extend %descr;
+            color: $text;
+            background-color: inherit;
+            border: none;
+            border-bottom: 2px dashed $text;
+            border-radius: 10px;
+        
+            max-width: 250px;
+            width: 90%;
+            padding: 10px 20px;
+            transition: border-color 0.3s linear, box-shadow 0.3s linear;
+            &::placeholder{
+                color: $dim-text;
+                opacity: 0.8;
+            }
+            &:focus, &:hover{
+                outline: none;
+                border-color: $dim-text;
+                box-shadow: 0px 10px 12px -6px rgba(166, 139, 165, 0.25);
+            }
+        }
+    }
+    &__content {
+        height: 500px;
+        min-width: 900px;
+        max-width: 1200px;
+        margin: 0 auto;
+        background-image: url('../../resources/img/back.svg');
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        background-size: 100%;
+        position: relative;
+        div {
+            &:nth-child(1) {
+                position: absolute;
+                top: 45%;
+                left: 9%;
+            }
+            &:nth-child(2) {
+                position: absolute;
+                top: 84%;
+                left: 13%;
+            }
+            &:nth-child(3) {
+                position: absolute;
+                top: 25%;
+                left: 20.5%;
+            }
+            &:nth-child(4) {
+                position: absolute;
+                top: 40%;
+                left: 45%;
+            }
+            &:nth-child(5) {
+                position: absolute;
+                top: 69%;
+                left: 67%;
+            }
+            &:nth-child(6) {
+                position: absolute;
+                top: 90%;
+                left: 88%;
+            }
+        }
+        &_gr {
+            text-align: center;
+            @extend %descr;
+            position: absolute;
+            max-width: 150px;
+            bottom: -40px;
+            left: 10%;
+        }
+        &_wr {
+            position: absolute;
+            @extend %descr;
+            bottom: -40px;
+            right: 0;
+        }
+        @media (max-width: 1200px) {
+            height: 470px;
+        }
+        @media (max-width: 1200px) {
+            height: 420px;
+        }
+        @media (max-width: 1000px) {
+            height: 390px;
+        }
+        @media (max-width: 950px) {
+            height: 370px;
+        }
+    }
+}

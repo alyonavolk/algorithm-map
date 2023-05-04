@@ -1,0 +1,6 @@
+@import '../../../style/variables.scss';
+
+.footer {
+    @extend %main-descr;
+    padding: 30px 100px;
+}
