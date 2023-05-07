@@ -35,6 +35,9 @@
         flex-direction: column;
         align-items: center;
         gap: 20px;
+        @extend %descr;
+        color: $text;
+        font-size: 22px;
         &_input {
             @extend %descr;
             color: $text;
