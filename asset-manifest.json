@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/algorithm-map/static/css/main.a548a444.css",
+    "main.js": "/algorithm-map/static/js/main.4a68c237.js",
+    "static/media/Графическая_форма_записи_алгоритма.exe": "/algorithm-map/static/media/Графическая_форма_записи_алгоритма.eb7850dd80d6b8fd4783.exe",
+    "static/media/Формулы_суммы_и_произведения.exe": "/algorithm-map/static/media/Формулы_суммы_и_произведения.abbfb098c7df72ca0ba5.exe",
+    "static/media/Формы_записи_алгоритмов.exe": "/algorithm-map/static/media/Формы_записи_алгоритмов.c8e2aa5d1b149c960823.exe",
+    "static/media/Линейные_алгоритмы.exe": "/algorithm-map/static/media/Линейные_алгоритмы.49235e7f89ebc8afea74.exe",
+    "static/media/back.svg": "/algorithm-map/static/media/back.c7535d6bae1f7d5e777a.svg",
+    "static/media/tree.svg": "/algorithm-map/static/media/tree.cd7fbbead15a659e50e3.svg",
+    "static/media/Составление_разветвляющихся_алгоритмов.exe": "/algorithm-map/static/media/Составление_разветвляющихся_алгоритмов.e9a7d0f2038683d6250f.exe",
+    "static/media/Анализ_программ.exe": "/algorithm-map/static/media/Анализ_программ.c1c95d51d24298a7dbce.exe",
+    "index.html": "/algorithm-map/index.html",
+    "main.a548a444.css.map": "/algorithm-map/static/css/main.a548a444.css.map",
+    "main.4a68c237.js.map": "/algorithm-map/static/js/main.4a68c237.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a548a444.css",
+    "static/js/main.4a68c237.js"
+  ]
+}
