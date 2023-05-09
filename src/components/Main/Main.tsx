@@ -1,80 +1,36 @@
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 import './main.scss';
 
 import Button from "../subComponents/Button/Button";
 import Step from "../subComponents/Step/Step";
 
 import { ROUTES } from "../Routes";
+import { TMap } from '../../resources/Map';
 
 interface IMainProps {
+    mapValue: TMap;
+    setName: Dispatch<SetStateAction<string | boolean>>;
+    name: string | boolean;
+    startMap: React.MouseEventHandler<HTMLButtonElement>;
+    ClearMap: React.MouseEventHandler<HTMLButtonElement>;
+    entry: string | boolean;
+    status: number;
 }
 
-const map = {
-    route1: true,
-    route2: true,
-    route3: true,
-    route4: true,
-    gh_route1: true,
-    gh_route2: true
-} 
-
-const Main: React.FC<IMainProps> = (props) => {
-    const [name, setName] = useState(localStorage.getItem('name') || '');
-    const [entry, setEntry] = useState(true);
-
-    const [mapValue, setMapValue] = useState(map);
-
-    useEffect(() => {
-        parseMap()
-    }, [])
-
-
-    const parseMap = () => {
-        const local  = localStorage.getItem('map');
-        if (typeof local === 'string') {
-            const parse = JSON.parse(local)
-            setMapValue(parse);
-        }
-    }
-
-    const local = (name: string, local: object | string) => {
-        localStorage.setItem(name, JSON.stringify(local))
-    }
-
-    const startMap = () => {
-        if (name === '' || name.length > 50) {
-            return 
-        }
-        setEntry(false);
-        setMapValue(val => ({...val, route1: true, gh_route1: true}))
-        local('name', name)
-        local('map',mapValue)
-        // setTimeout(() => {local('map',mapValue); console.log(mapValue)}, 5000)
-    }
-
-    const ClearMap = () => {
-        setEntry(true);
-        setMapValue(map);
-        localStorage.clear();
-    }
-
-    useEffect(() => {
-        // console.log(mapValue)
-    }, [mapValue])
-
+const Main: React.FC<IMainProps> = ({mapValue, setName, name, entry, startMap, ClearMap, status}) => {
   return (
     <div className='main'>
         <h1 className="main__title">Представление алгоритмов</h1>
         <div className='main__progres'>
-            <p>Всего пройдено</p>
-            <p>0 %</p>
+            <p>Всего открыто</p>
+            <p>{status} %</p>
         </div>
         <div className='main__info'>
             <div className='main__form'>
                 {entry ?  <>
                     <input className='main__form_input' 
                     placeholder='Введите имя'
-                    value={name} 
+                    value={typeof name == 'string' ? name : ''} 
                     onChange={(e) => setName(e.target.value)} />
                     <Button onClick={startMap}>Начать</Button>
                 </> : <>

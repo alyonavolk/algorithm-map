@@ -7,12 +7,13 @@ interface IPageInfoProps {
     title: string;
     children: React.ReactNode;
     link: string;
+    onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
-const PageInfo: React.FC<IPageInfoProps> = ({title, children, link}) => {
+const PageInfo: React.FC<IPageInfoProps> = ({title, children, link, onClick}) => {
   return (
     <div className='page'>
-        <h2 className='page__title'><NavLink to='/'>{'<'}</NavLink>{title}</h2>
+        <h2 className='page__title'><NavLink to='/' onClick={onClick}>{'<'}</NavLink>{title}</h2>
         <div className='page__content'>
             {children}
         </div>
